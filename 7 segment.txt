@@ -1,0 +1,163 @@
+import RPi.GPIO as GPIO
+import time
+#!/usr/bin/env python
+#coding: utf-8
+#In[8]:
+
+#set the mode of GPIO pin
+s=0
+a=3
+b=7
+c=8
+d=11
+e=16
+f=19
+g=22
+h=40
+GPIO.setwarnings(False) 
+GPIO.setmode(GPIO.BOARD)
+#set pin 3 as output 
+GPIO.setup(3,GPIO.OUT)
+#set pin 7 as output 
+GPIO.setup(7,GPIO.OUT)
+#set pin 8 as output 
+GPIO.setup(8,GPIO.OUT)
+#set pin 11 as output 
+GPIO.setup(11,GPIO.OUT)
+#set pin 16 as output 
+GPIO.setup(16,GPIO.OUT)
+#set pin 19 as output 
+GPIO.setup(19,GPIO.OUT)
+#set pin 22 as output 
+GPIO.setup(22,GPIO.OUT)
+#set pin 40 as output 
+GPIO.setup(40,GPIO.OUT)
+#set pin 13 as input 
+GPIO.setup(13,GPIO.IN)
+
+#choosing which switch should be operated
+while True:
+    if GPIO.input(40)==1:
+        s=s+1
+        time.sleep(1)
+        if s==1:
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,0)
+            GPIO.output(e,0)
+            GPIO.output(f,0)
+            GPIO.output(g,1)
+            GPIO.output(h,1)
+            print("0 is displayed")
+  
+        elif s==2:
+            
+            GPIO.output(a,1)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,1)
+            GPIO.output(e,1)
+            GPIO.output(f,1)
+            GPIO.output(g,1)
+            GPIO.output(h,1)
+            print("1 is displayed")
+   
+        elif s==3:
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,1)
+            GPIO.output(d,0)
+            GPIO.output(e,0)
+            GPIO.output(f,1)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("2 is displayed")
+    
+        elif s==4:
+            
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,0)
+            GPIO.output(e,1)
+            GPIO.output(f,1)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("3 is displayed")
+        elif s==5:
+            GPIO.output(a,1)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,1)
+            GPIO.output(e,1)
+            GPIO.output(f,0)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("4 is displayed")
+        elif s==6:
+            GPIO.output(a,0)
+            GPIO.output(b,1)
+            GPIO.output(c,0)
+            GPIO.output(d,0)
+            GPIO.output(e,1)
+            GPIO.output(f,0)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("5 is displayed")
+    
+        elif s==7:
+            GPIO.output(a,0)
+            GPIO.output(b,1)
+            GPIO.output(c,0)
+            GPIO.output(d,0)
+            GPIO.output(e,0)
+            GPIO.output(f,0)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("6 is displayed")
+    
+        elif s==8:
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,1)
+            GPIO.output(e,1)
+            GPIO.output(f,1)
+            GPIO.output(g,1)
+            GPIO.output(h,1)
+            print("7 is displayed")
+    
+        elif s==9:
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,0)
+            GPIO.output(e,0)
+            GPIO.output(f,0)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("8 is displayed")
+    
+        elif s==10:
+            GPIO.output(a,0)
+            GPIO.output(b,0)
+            GPIO.output(c,0)
+            GPIO.output(d,1)
+            GPIO.output(e,1)
+            GPIO.output(f,0)
+            GPIO.output(g,0)
+            GPIO.output(h,1)
+            print("9 is displayed")
+        else:
+            GPIO.output(a,1)
+            GPIO.output(b,1)
+            GPIO.output(c,1)
+            GPIO.output(d,1)
+            GPIO.output(e,1)
+            GPIO.output(f,1)
+            GPIO.output(g,1)
+            GPIO.output(h,1)
+            print("switch is off")
+   
+# In[]:    
